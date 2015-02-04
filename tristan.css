@@ -1,0 +1,74 @@
+html, body, div, h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  list-style: none;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #f2f2f2;
+  color: #333;
+}
+
+a {
+  color: #059;
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+
+  width: 400px;
+  padding: 20px;
+  margin: 300px auto 0;
+
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.face {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 40px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.face img {
+  width: 130%;
+}
+
+.bio {
+  flex-grow: 1;
+}
+
+.name, .employment {
+  line-height: 30px;
+  margin-top: 10px;
+}
+.name {
+  font-size: 2em;
+  font-weight: lighter;
+}
+.employment {
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+}
+.links .networks {
+  flex-grow: 1;
+}
+.links a {
+  color: #555;
+
+  font-size: 28px;
+  padding: 0 0.2em;
+}
+
