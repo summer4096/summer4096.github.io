@@ -38,7 +38,7 @@ a {
 }
 
 .face img {
-  width: 130%;
+  width: 100%;
 }
 
 .bio {
@@ -71,4 +71,3 @@ a {
   font-size: 28px;
   padding: 0 0.2em;
 }
-
