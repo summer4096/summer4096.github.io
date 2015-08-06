@@ -1,4 +1,4 @@
-html, body, div, h1, h2, ul, li {
+.filler {
   margin: 0;
   padding: 0;
   border: 0;
@@ -13,114 +13,117 @@ html, body {
 body {
   font-family: "Source Sans Pro", sans-serif;
   background: #f4f4f5;
-  color: #444a52;
-  display: flex;
-  align-items: center;
+  color: #494a4a;
+  margin: 0;
 }
 
 a {
-  color: rgba(68, 74, 82, 0.54);
   text-decoration: none;
+  color: inherit;
+  transition: color 0.16s;
 }
 
-.card {
+a:hover {
+  color: #5093ac;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin: 0;
+  line-height: 1.1em;
+}
+
+h2 {
+  font-size: 1.666em;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.background {
+  background: #494a4a;
+  box-shadow: 0 0 128px rgba(0,0,0,0.37), 0 0 6px rgba(0,0,0,0.37);
   display: flex;
-
-  max-width: 338px;
-  padding: 24px 32px;
-  margin: auto;
-
-  background: #fff;
-  box-shadow: 0 1px 9px rgba(68, 74, 82, 0.23), 0 1px 1px rgba(68, 74, 82, 0.54);
-}
-
-.face {
-  width: 80px;
-  height: 80px;
-
-  border-radius: 48px;
-  overflow: hidden;
-  margin-right: 24px;
-  flex-shrink: 0;
-  opacity: 0.87;
-}
-
-.face img {
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  margin-bottom: 64px;
+  padding: 0 16px;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.bio {
+.background .filler {
   flex-grow: 1;
 }
 
-.name, .employment {
-  line-height: 32px;
-}
-.name {
-  font-size: 2em;
-  font-weight: lighter;
-  margin-bottom: 16px;
-  margin-top: 4px;
-}
-.employment {
-  font-size: 1.5em;
-  font-weight: lighter;
-  margin-bottom: 4px;
+.content {
+  padding: 48px 16px 0;
 }
 
-.links {
+.content .card {
+  margin-bottom: 48px;
+}
+
+.card {
+  display: block;
+  padding: 24px 32px;
+  border-radius: 2px;
+
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 1px 9px rgba(73, 74, 74, 0.23), 0 1px 1px rgba(73, 74, 74, 0.54);
+}
+.card.wide {
+  max-width: 512px;
+}
+.card.header {
+  flex-shrink: 0;
+  position: relative;
+  bottom: -60px;
+}
+
+.card.header h1,
+.card.header h2 {
+  text-align: center;
+}
+
+.card.header .links {
   margin-top: 24px;
   display: flex;
+  line-height: 24px;
 }
-.links a {
-  color: rgba(68, 74, 82, 0.54);
-
+.card.header .links .left {
+  flex-grow: 1;
+}
+.card.header .links .left,
+.card.header .links .right {
+  flex-shrink: 0;
+}
+.card.header .links a {
+  opacity: 0.87;
+  padding-left: 6px;
+  line-height: 24px;
+  font-size: 13px;
+}
+.card.header .links a:before {
   font-size: 24px;
-  padding: 0 0.2em;
+  vertical-align: top;
+  margin-right: 4px;
 }
 
 @media screen and (max-width: 720px) {
-  body, .card {
-    display: block;
-  }
-
   .card {
-    padding: 32px 16px;
-    background: transparent;
-    box-shadow: none;
+    font-size: 0.8em;
   }
-
-  .face {
-    margin-right: auto;
-    margin: 0 auto 32px;
-
-    width: 128px;
-    height: 128px;
-    border-radius: 64px;
+  .card h1 {
+    line-height: 1;
   }
-
-  .bio {
-    text-align: center;
-  }
-
-  .name {
-    margin-top: 0;
-
-    font-size: 3.5em;
-    line-height: 48px;
-  }
-
-  .employment {
-    margin-bottom: 32px;
-
-    font-size: 2em;
-  }
-
-  .links {
-    justify-content: center;
-  }
-
-  .links a {
-    font-size: 48px;
+  .card.header .links a {
+    font-size: 0;
   }
 }
