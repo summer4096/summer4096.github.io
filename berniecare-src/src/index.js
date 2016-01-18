@@ -111,7 +111,7 @@ class App extends React.Component {
         <input type="number" value={ healthcare } onChange={ setHealthcare }></input>
         <span className="dollarSign">$</span>
       </label>
-      { costDelta >= 0 ? <div className="savings">
+      { costDelta > 0 ? <div className="savings">
         ${ costDelta.toLocaleString() } saved each year
       </div> : <div className="costs">
         ${ (-costDelta).toLocaleString() } in additional costs each year

@@ -223,7 +223,7 @@ var App = (function (_React$Component) {
             '$'
           )
         ),
-        costDelta >= 0 ? _react2.default.createElement(
+        costDelta > 0 ? _react2.default.createElement(
           'div',
           { className: 'savings' },
           '$',
