@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+#widget {
+  background: #147FD7;
+  color: white;
+  font-family: lato, sans-serif;
+  margin: 32px auto 0;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  max-width: 640px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
