@@ -187,31 +187,55 @@ var App = (function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'Household income',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { type: 'number', value: income, onChange: setIncome }),
-        _react2.default.createElement('br', null),
-        'Number of exemptions',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions }),
-        _react2.default.createElement('br', null),
-        'Current healthcare premiums and deductibles',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
-        _react2.default.createElement('br', null),
-        '$',
-        AVERAGE_HEALTHCARE_COST,
-        ' is the national average.',
-        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'label',
+          { className: 'inputArea' },
+          _react2.default.createElement(
+            'div',
+            { className: 'label' },
+            'Household income'
+          ),
+          _react2.default.createElement('input', { type: 'number', value: income, onChange: setIncome }),
+          _react2.default.createElement(
+            'span',
+            { className: 'dollarSign' },
+            '$'
+          )
+        ),
+        _react2.default.createElement(
+          'label',
+          { className: 'inputArea' },
+          _react2.default.createElement(
+            'div',
+            { className: 'label' },
+            'Number of exemptions'
+          ),
+          _react2.default.createElement('input', { type: 'number', value: exemptions, onChange: setExemptions })
+        ),
+        _react2.default.createElement(
+          'label',
+          { className: 'inputArea' },
+          _react2.default.createElement(
+            'div',
+            { className: 'label' },
+            'Current healthcare costs'
+          ),
+          _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
+          _react2.default.createElement(
+            'span',
+            { className: 'dollarSign' },
+            '$'
+          )
+        ),
         costDelta >= 0 ? _react2.default.createElement(
           'div',
-          null,
+          { className: 'savings' },
           '$',
           costDelta,
           ' saved each year'
         ) : _react2.default.createElement(
           'div',
-          null,
+          { className: 'costs' },
           '$',
           -costDelta,
           ' in additional costs each year'

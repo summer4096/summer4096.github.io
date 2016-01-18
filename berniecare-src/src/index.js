@@ -98,16 +98,23 @@ class App extends React.Component {
     let costDelta = healthcare - additionalTax
 
     return <div>
-      Household income<br/>
-      <input type="number" value={ income } onChange={ setIncome }></input><br/>
-      Number of exemptions<br/>
-      <input type="number" value={ exemptions } onChange={ setExemptions }></input><br/>
-      Current healthcare premiums and deductibles<br/>
-      <input type="number" value={ healthcare } onChange={ setHealthcare }></input><br/>
-      ${ AVERAGE_HEALTHCARE_COST } is the national average.<br/>
-      { costDelta >= 0 ? <div>
+      <label className="inputArea">
+        <div className="label">Household income</div>
+        <input type="number" value={ income } onChange={ setIncome }></input>
+        <span className="dollarSign">$</span>
+      </label>
+      <label className="inputArea">
+        <div className="label">Number of exemptions</div>
+        <input type="number" value={ exemptions } onChange={ setExemptions }></input>
+      </label>
+      <label className="inputArea">
+        <div className="label">Current healthcare costs</div>
+        <input type="number" value={ healthcare } onChange={ setHealthcare }></input>
+        <span className="dollarSign">$</span>
+      </label>
+      { costDelta >= 0 ? <div className="savings">
         ${ costDelta } saved each year
-      </div> : <div>
+      </div> : <div className="costs">
         ${ -costDelta } in additional costs each year
       </div> }
     </div>
