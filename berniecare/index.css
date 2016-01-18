@@ -1,5 +1,17 @@
 body {
   margin: 0;
+  background: #f4f4f5;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #001F3A;
+  height: 148px;
+  box-shadow: 0 0 128px rgba(0,0,0,0.17), 0 0 6px rgba(0,0,0,0.23);
+  z-index: 0;
 }
 
 #widget {
@@ -11,10 +23,18 @@ body {
   box-sizing: border-box;
   max-width: 640px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  box-shadow: 0 1px 9px rgba(73, 74, 74, 0.23), 0 1px 1px rgba(73, 74, 74, 0.54);
 }
 
 h1 {
   margin: 0;
+}
+h2 {
+  font: inherit;
+  margin-bottom: 48px;
 }
 
 .inputArea {
@@ -46,4 +66,5 @@ input {
 .savings, .costs {
   font-size: 2em;
   font-weight: lighter;
+  margin-top: 48px;
 }

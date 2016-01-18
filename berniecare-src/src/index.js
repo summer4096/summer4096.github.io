@@ -87,19 +87,18 @@ class App extends React.Component {
     this.state = { income: 50000, exemptions: 4, healthcare: AVERAGE_HEALTHCARE_COST }
   }
   render () {
-    let { income, exemptions, healthcare, advanced } = this.state
+    let { income, exemptions, healthcare } = this.state
 
-    let setIncome = e => this.setState({income: e.target.value})
-    let setExemptions = e => this.setState({exemptions: e.target.value})
-    let setHealthcare = e => this.setState({healthcare: e.target.value})
-    let toggleAdvanced = () => this.setState({advanced: !advanced})
+    let setIncome = e => this.setState({income: e.target.value ? Math.max(0, e.target.value) : null})
+    let setExemptions = e => this.setState({exemptions: e.target.value ? Math.max(0, e.target.value) : null})
+    let setHealthcare = e => this.setState({healthcare: e.target.value ? Math.max(0, e.target.value) : null})
 
-    let additionalTax = Math.round((totalTaxes(FUTURE, income, exemptions) - totalTaxes(CURRENT, income, exemptions)) * 100) / 100
-    let costDelta = healthcare - additionalTax
+    let additionalTax = Math.round((totalTaxes(FUTURE, income || 0, exemptions || 0) - totalTaxes(CURRENT, income || 0, exemptions || 0)) * 100) / 100
+    let costDelta = Math.round((healthcare || 0) - additionalTax)
 
     return <div>
       <label className="inputArea">
-        <div className="label">Household income</div>
+        <div className="label">Household income each year</div>
         <input type="number" value={ income } onChange={ setIncome }></input>
         <span className="dollarSign">$</span>
       </label>
@@ -108,14 +107,14 @@ class App extends React.Component {
         <input type="number" value={ exemptions } onChange={ setExemptions }></input>
       </label>
       <label className="inputArea">
-        <div className="label">Current healthcare costs</div>
+        <div className="label">Current healthcare costs each year</div>
         <input type="number" value={ healthcare } onChange={ setHealthcare }></input>
         <span className="dollarSign">$</span>
       </label>
       { costDelta >= 0 ? <div className="savings">
-        ${ costDelta } saved each year
+        ${ costDelta.toLocaleString() } saved each year
       </div> : <div className="costs">
-        ${ -costDelta } in additional costs each year
+        ${ (-costDelta).toLocaleString() } in additional costs each year
       </div> }
     </div>
   }

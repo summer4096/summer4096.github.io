@@ -167,23 +167,19 @@ var App = (function (_React$Component) {
       var income = _state.income;
       var exemptions = _state.exemptions;
       var healthcare = _state.healthcare;
-      var advanced = _state.advanced;
 
       var setIncome = function setIncome(e) {
-        return _this2.setState({ income: e.target.value });
+        return _this2.setState({ income: e.target.value ? Math.max(0, e.target.value) : null });
       };
       var setExemptions = function setExemptions(e) {
-        return _this2.setState({ exemptions: e.target.value });
+        return _this2.setState({ exemptions: e.target.value ? Math.max(0, e.target.value) : null });
       };
       var setHealthcare = function setHealthcare(e) {
-        return _this2.setState({ healthcare: e.target.value });
-      };
-      var toggleAdvanced = function toggleAdvanced() {
-        return _this2.setState({ advanced: !advanced });
+        return _this2.setState({ healthcare: e.target.value ? Math.max(0, e.target.value) : null });
       };
 
-      var additionalTax = Math.round((totalTaxes(FUTURE, income, exemptions) - totalTaxes(CURRENT, income, exemptions)) * 100) / 100;
-      var costDelta = healthcare - additionalTax;
+      var additionalTax = Math.round((totalTaxes(FUTURE, income || 0, exemptions || 0) - totalTaxes(CURRENT, income || 0, exemptions || 0)) * 100) / 100;
+      var costDelta = Math.round((healthcare || 0) - additionalTax);
 
       return _react2.default.createElement(
         'div',
@@ -194,7 +190,7 @@ var App = (function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'label' },
-            'Household income'
+            'Household income each year'
           ),
           _react2.default.createElement('input', { type: 'number', value: income, onChange: setIncome }),
           _react2.default.createElement(
@@ -219,7 +215,7 @@ var App = (function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'label' },
-            'Current healthcare costs'
+            'Current healthcare costs each year'
           ),
           _react2.default.createElement('input', { type: 'number', value: healthcare, onChange: setHealthcare }),
           _react2.default.createElement(
@@ -232,13 +228,13 @@ var App = (function (_React$Component) {
           'div',
           { className: 'savings' },
           '$',
-          costDelta,
+          costDelta.toLocaleString(),
           ' saved each year'
         ) : _react2.default.createElement(
           'div',
           { className: 'costs' },
           '$',
-          -costDelta,
+          (-costDelta).toLocaleString(),
           ' in additional costs each year'
         )
       );
