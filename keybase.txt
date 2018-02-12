@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/summer4096
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://summer.dev
+  * I am summer4096 (https://keybase.io/summer4096) on keybase.
+  * I have a public key ASBfMrQe7sBi2KFPlJ0y6-plz1-7_ZEo2mK1-LLajo_1DAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01205f32b41eeec062d8a14f949d32ebea65cf5fbbfd9128da62b5f8b2da8e8ff50c0a",
+      "host": "keybase.io",
+      "kid": "01205f32b41eeec062d8a14f949d32ebea65cf5fbbfd9128da62b5f8b2da8e8ff50c0a",
+      "uid": "24db04c2e7b7c6f48cb82c53ba7dd619",
+      "username": "summer4096"
+    },
+    "merkle_root": {
+      "ctime": 1518471178,
+      "hash": "6803ea6eace75f596a3314046e2a68e85d3d333d188c25e36398ac678443d36c6c3960b4391d0db1defd5353cd3de833e47467282c58411eb0f97da6b23c8cd4",
+      "hash_meta": "75a0188fbc7f3fdf7796751c5c5c1682b9f438bea940734380735236539f8332",
+      "seqno": 2072490
+    },
+    "service": {
+      "hostname": "summer.dev",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.40"
+  },
+  "ctime": 1518471182,
+  "expire_in": 504576000,
+  "prev": "82e896d37a11d27d8177bbf1f7ebc57962c9c033674bc0dcc6e72d8cdb8456a9",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgXzK0Hu7AYtihT5SdMuvqZc9fu/2RKNpitfiy2o6P9QwKp3BheWxvYWTFAz97ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNWYzMmI0MWVlZWMwNjJkOGExNGY5NDlkMzJlYmVhNjVjZjVmYmJmZDkxMjhkYTYyYjVmOGIyZGE4ZThmZjUwYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNWYzMmI0MWVlZWMwNjJkOGExNGY5NDlkMzJlYmVhNjVjZjVmYmJmZDkxMjhkYTYyYjVmOGIyZGE4ZThmZjUwYzBhIiwidWlkIjoiMjRkYjA0YzJlN2I3YzZmNDhjYjgyYzUzYmE3ZGQ2MTkiLCJ1c2VybmFtZSI6Im1hZGQ1MTIifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MTg0NzExNzgsImhhc2giOiI2ODAzZWE2ZWFjZTc1ZjU5NmEzMzE0MDQ2ZTJhNjhlODVkM2QzMzNkMTg4YzI1ZTM2Mzk4YWM2Nzg0NDNkMzZjNmMzOTYwYjQzOTFkMGRiMWRlZmQ1MzUzY2QzZGU4MzNlNDc0NjcyODJjNTg0MTFlYjBmOTdkYTZiMjNjOGNkNCIsImhhc2hfbWV0YSI6Ijc1YTAxODhmYmM3ZjNmZGY3Nzk2NzUxYzVjNWMxNjgyYjlmNDM4YmVhOTQwNzM0MzgwNzM1MjM2NTM5ZjgzMzIiLCJzZXFubyI6MjA3MjQ5MH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJtYWRkLnRlY2giLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjQwIn0sImN0aW1lIjoxNTE4NDcxMTgyLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6IjgyZTg5NmQzN2ExMWQyN2Q4MTc3YmJmMWY3ZWJjNTc5NjJjOWMwMzM2NzRiYzBkY2M2ZTcyZDhjZGI4NDU2YTkiLCJzZXFubyI6NiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDOHGmj5nOXncTwpyGzMLL13jSdRmlSJXwavHM8c3L4GvyyzEenMgBiXtBEdCW1+dMSjt0iJk3IS871cuFrshkIqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQga/4/T4xze9B8ceE7IISD9qx86/LPfvuSz6boAcPP3LKjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/summer4096
+
+==================================================================
