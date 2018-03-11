@@ -3,17 +3,117 @@
   <head>
     <meta charset="utf-8">
     <title>Summer Davies</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+      }
+      body {
+        font-family: monospace;
+        background: #c5d1dd;
+      }
+      .fullsize {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #background {
+        filter: blur(8px);
+        transition: filter 0.5s;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #background.loaded {
+        filter: none;
+      }
+      #main {
+        background: rgba(255, 255, 255, 0.25);
+        color: #202528;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 0 16px 16px rgba(255, 255, 255, 0.25);
+      }
+      h1, h2, h3 {
+        font: inherit;
+        margin-bottom: 8px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <article id="piece-of-paper">
-      <p>Summer Davies, Software Developer</p>
-      <p>Currently employed, Faraday Inc</p>
-      <p>Please direct all inquiries to /dev/null</p>
-      <p id="contact">
-        ⏦<a href="https://github.com/summer4096">⏦</a><a href="mailto:hello@summer.dev">⏦</a>⏦
-      </p>
-    </article>
+    <div class="fullsize backgrounds">
+      <img id="background" src="bg-3264.jpg" class="loaded" />
+    </div>
+    <div class="fullsize">
+      <div id="main">
+        <h1>Summer Davies</h1>
+        <h2>Software Engineer</h2>
+        <h3>works at <a href="https://www.faraday.io/">Faraday Inc.</a></h3>
+        <nav>
+          <a href="https://github.com/summer4096">read code</a>
+          ∴
+          <a href="mailto:hello@summer.dev">say hello</a>
+        </nav>
+      </div>
+    </div>
+    <script>
+      var quick
+      var loaded
+      var bg = document.getElementById('background')
+
+      // if it hasn't loaded in 50ms, start progressive loading
+      setTimeout(function () {
+        if (!loaded) {
+          quick = false
+          bg.src = 'bg-326.jpg'
+          bg.className = ''
+          bg.onload = loadMediumBackground
+        }
+      }, 50)
+
+      // mark loaded for above functionality
+      bg.onload = function () {
+        loaded = true
+      }
+
+      function loadMediumBackground () {
+        var img = new Image()
+        img.src = 'bg-1920.jpg'
+        img.onload = function () {
+          bg.onload = null
+          bg.src = img.src
+          bg.className = 'loaded' // fade in, unblur
+          if ((window.devicePixelRatio || 1) * screen.width >= 1920) {
+            loadBigBackground()
+          }
+        }
+      }
+
+      function loadBigBackground () {
+        var img = new Image()
+        img.src = 'bg-3264.jpg'
+        img.onload = function () {
+          img.onload = null
+          bg.src = img.src
+        }
+      }
+    </script>
   </body>
 </html>
