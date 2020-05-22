@@ -506,6 +506,8 @@
           group.style.opacity = 0.4
           e.target.removeEventListener('mouseover', showConstellation)
           e.target.removeEventListener('touchmove', showConstellation)
+          e.target.removeEventListener('touchstart', showConstellation)
+          e.target.removeEventListener('click', showConstellation)
         }
         document.querySelector('#constellations').appendChild(group)
         for (const line of lines) {
@@ -516,6 +518,8 @@
             star.className = `constellation-star ${color}`
             star.addEventListener('mouseover', showConstellation)
             star.addEventListener('touchmove', showConstellation)
+            star.addEventListener('touchstart', showConstellation)
+            star.addEventListener('click', showConstellation)
 
             const [percentX, percentY] = translate(x, y)
 
